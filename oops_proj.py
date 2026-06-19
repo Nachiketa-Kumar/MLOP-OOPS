@@ -23,5 +23,36 @@ class chatbook:
             pass
         else:
             exit()
-object = chatbook()
 
+    def signup(self):
+        self.username = input("Enter your username: ")
+        self.password = input("Enter your password: ")
+        print("Signup successful !!")
+        self.menu()
+    def signin(self):
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
+        if username == self.username and password == self.password:
+            self.loggedin = True
+            print("Signin successful !!")
+        else:
+            print("Invalid username or password !!")
+        
+        self.menu()
+    def write_post(self):   
+        if self.loggedin:
+            post = input("Write your post: ")
+            print("Post successful !!")
+        else:
+            print("Please signin to write a post !!")
+        self.menu()
+    def message_friend(self):
+        if self.loggedin:
+            friend = input("Enter your friend's username: ")
+            message = input("Enter your message: ")
+            print("Message sent to " + friend + " !!")
+        
+        else:
+            print("Please signin to message a friend !!")
+        self.menu()
+object = chatbook()
